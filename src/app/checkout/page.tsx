@@ -13,7 +13,7 @@ import { Minus, Plus, ShoppingBag, Trash2 } from "lucide-react";
 import { checkoutAction } from "./chekout-action";
 
 const CheckoutPage = () => {
-  const { items, removeitem, addItem , clearCart} = useCartStore();
+  const { items, removeitem, addItem, clearCart } = useCartStore();
 
   const total = items.reduce(
     (acc, item) => acc + item.price * item.quantity,
@@ -41,7 +41,7 @@ const CheckoutPage = () => {
             </p>
 
             <Button
-             
+
               className="mt-6 h-11 rounded-xl px-6"
             >
               <a href="/products">Explore Products</a>
@@ -167,13 +167,18 @@ const CheckoutPage = () => {
                     </li>
                   ))}
                 </ul>
-                 <Button
-                 onClick={() => clearCart()}
-                    type="submit"
-                    className="rounded-xl text-base font-semibold shadow-sm"
+                {/* Clear Cart */}
+                <div className="flex justify-end border-t border-gray-100 px-5 py-4 sm:px-6">
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    onClick={clearCart}
+                    className="rounded-xl text-sm font-medium text-red-600 hover:bg-red-50 hover:text-red-700"
                   >
-                    Clear Cart
+                    <Trash2 className="mr-2 h-4 w-4" />
+                    Clear cart
                   </Button>
+                </div>
               </CardContent>
             </Card>
           </section>
@@ -223,7 +228,7 @@ const CheckoutPage = () => {
                 </div>
 
                 <form action={checkoutAction}>
-                    <input type="hidden" name="items" value={JSON.stringify(items)} />
+                  <input type="hidden" name="items" value={JSON.stringify(items)} />
                   <Button
                     type="submit"
                     className="h-12 w-full rounded-xl text-base font-semibold shadow-sm"

@@ -47,7 +47,7 @@ const Navbar = () => {
           </span>
 
           <span className="text-xl font-bold tracking-tight text-neutral-900 sm:text-2xl">
-            My<span className="text-neutral-500">Store</span>
+            <span className="text-neutral-500">Producty</span>
           </span>
         </Link>
 
@@ -68,7 +68,7 @@ const Navbar = () => {
         <div className="flex items-center gap-2">
           {/* Cart Button */}
           <Button
-            
+
             variant="outline"
             size="icon"
             className="relative h-10 w-10 rounded-full border-neutral-200 transition-colors hover:bg-neutral-100"
@@ -129,3 +129,6 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+
